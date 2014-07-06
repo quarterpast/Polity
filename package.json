@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/quarterto/Polity",
   "dependencies": {
+    "es6-map": "^0.1.0",
     "eventide": "^0.2.0"
   }
 }
