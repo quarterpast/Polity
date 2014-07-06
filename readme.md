@@ -12,6 +12,22 @@ npm install polity
 
 State objects are just ES6 `Map`s that emit events when values get changed.
 
+## Example
+```javascript
+var State = require('polity');
+var obj = new State();
+obj.on('change', function(prop, val) {
+  console.log('changed', prop, val);
+});
+obj.set('foo', 'bar'); // logs "changed foo bar"
+obj.set('baz', 'quux'); // logs "changed baz quux"
+obj.on('delete:foo', function() {
+  console.log('what the... where did foo go?');
+});
+obj.delete('foo'); // logs "what the... where did foo go?"
+obj.delete('baz'); // don't log nuthin
+```
+
 ## API
 ### `State([initAttributes])`
 #### `#set(key, value)` or `#set(object)`
