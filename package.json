@@ -4,6 +4,7 @@
   "description": "Event-emitting stateful objects",
   "main": "index.js",
   "scripts": {
+    "prepublish": "make test",
     "test": "make test"
   },
   "repository": {
